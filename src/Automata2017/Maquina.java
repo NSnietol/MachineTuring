@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author sala de software
+ * @author NSnietol
  */
 public class Maquina implements Estandar {
 
@@ -238,7 +238,7 @@ public class Maquina implements Estandar {
     
     
 
-    public String toWork(Apuntador apuntar) {
+    public ArrayList<String> toWork(Apuntador apuntar) {
 
         Nodo valor = nodos.get(0);
 
@@ -251,41 +251,9 @@ public class Maquina implements Estandar {
         }
         
         System.out.println("Llegó al Estado q" + valor.getId());
-        return cinta.toString();
+        return cinta;
 
     }
 
 }
 
-
-/*
-El código hace referencia a la maquina que realiza el complemento de un numero binario
-
-
- Nodo q0 = new Nodo(1);
-        Nodo q1 = new Nodo(2);
-        Nodo q2 = new Nodo(3,true);
-
-        Transicion t1 = new Transicion("1", "0", derecha, q0);
-        Transicion t2 = new Transicion("0", "1", derecha, q0);
-        Transicion t3 = new Transicion(caracterIntermedio, caracterIntermedio, izquierda, q1);
-        q0.getTransiciones().add(t1);
-        q0.getTransiciones().add(t2);
-        q0.getTransiciones().add(t3);
-
-        Transicion t4 = new Transicion("1", "1", izquierda, q1);
-        Transicion t5 = new Transicion("0", "0", izquierda, q1);
-        Transicion t6 = new Transicion(caracterIntermedio, caracterIntermedio, derecha, q2);
-
-        q1.getTransiciones().add(t4);
-        q1.getTransiciones().add(t5);
-        q1.getTransiciones().add(t6);
-
-        nodos.add(q0);
-        nodos.add(q1);
-        nodos.add(q2);
-
-
-
-
- */

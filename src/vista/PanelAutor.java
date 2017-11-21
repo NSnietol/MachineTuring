@@ -9,12 +9,12 @@ package vista;
  *
  * @author ns
  */
-public class Autor extends javax.swing.JDialog {
+public class PanelAutor extends javax.swing.JDialog {
 
     /**
      * Creates new form Authors
      */
-    public Autor(java.awt.Frame parent, boolean modal) {
+    public PanelAutor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(parent);

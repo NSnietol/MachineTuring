@@ -56,6 +56,7 @@ public class PanelPrincipal extends javax.swing.JFrame   {
             }
         });
 
+        jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem1.setText("Salir");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,7 +78,7 @@ public class PanelPrincipal extends javax.swing.JFrame   {
         });
         jMenu3.add(jMenuItem2);
 
-        jMenuItem3.setText("Creditos");
+        jMenuItem3.setText("Créditos");
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
@@ -90,6 +91,7 @@ public class PanelPrincipal extends javax.swing.JFrame   {
         jMenu2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagenes/if_share_353438.png"))); // NOI18N
         jMenu2.setText("MT");
 
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem4.setText("Suma Binaria");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -117,17 +119,17 @@ public class PanelPrincipal extends javax.swing.JFrame   {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-         Informacion info = new Informacion(this,true);
+         PanelInformacion info = new PanelInformacion(this,true);
         info.setVisible(true);
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-    Autor view = new Autor(this, true);
+    PanelAutor view = new PanelAutor(this, true);
         view.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        vista suma = new vista(this,true);
+        PanelMaquina suma = new PanelMaquina(this,true);
         suma.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 

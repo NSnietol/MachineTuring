@@ -7,7 +7,7 @@ package Automata2017;
 
 /**
  *
- * @author sala de software
+ 
  */
 public interface Estandar {
 

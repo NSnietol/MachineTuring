@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author sala de software
+ * @author NSnietol
  */
 public class Nodo {
 
@@ -85,7 +85,7 @@ public class Nodo {
     }
 
     public void mostrarId() {
-        System.out.println("ESTADO ID : " + id);
+        System.out.println("\tESTADO NÚMERO : " + id);
     }
 
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Automata2017;
 
 import java.util.ArrayList;
@@ -11,11 +6,10 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author sala de software
+ * @author NSnietol
  */
 public class Transicion implements Estandar {
 
-    
     private String evaluar;
     private String reemplazo;
     private int movimiento;
@@ -27,61 +21,60 @@ public class Transicion implements Estandar {
         this.movimiento = movimiento;
         this.destino = destino;
     }
-    
-    
-    private void mostrar(ArrayList<String> cade){
-        
-        System.out.print("Cinta : ");
+
+    private String mostrar(ArrayList<String> cade) {
+
+       String cadena="";
         for (String string : cade) {
-            System.out.print(string);
+           cadena+=string;
+        
         }
-    
-        System.out.println("");
+        cadena+="\n";
+        return cadena;
     }
 
-    public Nodo Operar(ArrayList<String> cadena, Apuntador referencia){
+    public Nodo Operar(ArrayList<String> cadena, Apuntador referencia) {
+
         
-        System.out.println("------------------------------------------------");
-        System.out.println("Apuntador en : "+referencia.getReferencia());
-        mostrar(cadena);
-        
-        System.out.print(cadena.toArray()[referencia.getReferencia()]+ ">" );
-         
+        System.out.println("------------------------------------------");
+        System.out.println("Apuntador en : " + referencia.getReferencia());
+        System.out.println("Cinta : "+mostrar(cadena));
+        System.out.print(cadena.toArray()[referencia.getReferencia()] + ">");
+        System.out.println((String) cadena.toArray()[referencia.getReferencia()]);
+        System.out.println("------------------------------------------");
+       
+
+   
+
         // Cadena es un ArrayList, así que para modificar un valor solo se necesita la posición y el nuevo valor 
         cadena.set(referencia.getReferencia(), reemplazo);
-         
-         
-         System.out.println(cadena.toArray()[referencia.getReferencia()] );
-         
-         // De acuerdo al movimiento que requeria el cabeza así es realizado
-         asignarReferencia(referencia);
-         // O sea si tenia que moverse a la derecha, se suma +1 o a la izquierda se resta 1
-         
-         
-         System.out.println("Apuntador en : "+referencia.getReferencia());
-         System.out.println("-----------------------------------------------\n");
-         
+
+        // De acuerdo al movimiento que requeria el cabeza así es realizado
+        asignarReferencia(referencia);
+        // O sea si tenia que moverse a la derecha, se suma +1 o a la izquierda se resta 1
+
+      
+
         try {
-            Thread.sleep(300);
+            System.out.println("\t\tVelocidad : "+vista.PanelMaquina.velocidad);
+            Thread.sleep(vista.PanelMaquina.velocidad);
             // El proceso ocurre muy rápido si transcurre sin un descanso, por eso se colocó este Sleep
-            
+
         } catch (InterruptedException ex) {
             Logger.getLogger(Transicion.class.getName()).log(Level.SEVERE, null, ex);
         }
-         return this.destino;
-        
-         
-    
+        return this.destino;
+
     }
-    
-    private boolean asignarReferencia(Apuntador ref){
-    
+
+    private boolean asignarReferencia(Apuntador ref) {
+
         switch (movimiento) {
             case DERECHA:
-                ref.setReferencia(ref.getReferencia()+1);
+                ref.setReferencia(ref.getReferencia() + 1);
                 break;
             case IZQUIERDA:
-                ref.setReferencia(ref.getReferencia()-1);
+                ref.setReferencia(ref.getReferencia() - 1);
                 break;
             case DETENER:
                 ref.setReferencia(ref.getReferencia());
@@ -92,9 +85,7 @@ public class Transicion implements Estandar {
         }
         return true;
     }
-    
-    
-    
+
     public String getEvaluar() {
         return evaluar;
     }
@@ -126,11 +117,9 @@ public class Transicion implements Estandar {
     public void setDestino(Nodo destino) {
         this.destino = destino;
     }
-    
-    
-    public void transicion(){
-        System.out.println(evaluar+" / "+reemplazo+","+movimiento);
+
+    public void transicion() {
+        System.out.println(evaluar + " / " + reemplazo + "," + movimiento);
     }
-    
 
 }

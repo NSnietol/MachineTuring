@@ -8,7 +8,7 @@ package Automata2017;
 import java.util.Observable;
 
 /**
- * Lo puse así para saber en todo momento donde se encuentra el apuntador por el uso de referencia en Memoria
+ * Permite saber en todo momento donde se encuentra el apuntador por el uso de referencia en Memoria
  * @author ns
  */
 public class Apuntador  extends Observable {
