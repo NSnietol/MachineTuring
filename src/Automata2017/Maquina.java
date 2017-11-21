@@ -34,7 +34,7 @@ public class Maquina implements Estandar {
 
     public Maquina(String cadena) {
 
-        this.cinta= (convertir(cadena));
+        this.cinta = (convertir(cadena));
 
         nodos = new ArrayList<>();
         Nodo q0 = new Nodo(0);
@@ -54,7 +54,8 @@ public class Maquina implements Estandar {
         Nodo q14 = new Nodo(14);
         Nodo q15 = new Nodo(15);
         Nodo q16 = new Nodo(16);
-        Nodo q17 = new Nodo(17, true);
+        Nodo q17 = new Nodo(17);
+        Nodo q18 = new Nodo(18, true);
 
         //Qo
         Transicion t1 = new Transicion(CARACTERINTERMEDIO, CARACTERINTERMEDIO, DERECHA, q1);
@@ -188,13 +189,25 @@ public class Maquina implements Estandar {
         // Q16
         Transicion t42 = new Transicion(CARACTERINTERMEDIO, CARACTERINTERMEDIO, DERECHA, q16);
         Transicion t43 = new Transicion(CARACTERESPECIAL, "1", DERECHA, q16);
-        Transicion t44 = new Transicion("0", "0", DETENER, q17);
-        Transicion t45 = new Transicion("1", "1", DETENER, q17);
+        Transicion t44 = new Transicion("0", "0", IZQUIERDA, q17);
+        Transicion t45 = new Transicion("1", "1", IZQUIERDA, q17);
 
         q16.getTransiciones().add(t42);
         q16.getTransiciones().add(t43);
         q16.getTransiciones().add(t44);
         q16.getTransiciones().add(t45);
+
+        Transicion t48 = new Transicion(CARACTERINTERMEDIO, CARACTERINTERMEDIO, DETENER, q18);
+        Transicion t46 = new Transicion("0", "0", IZQUIERDA, q17);
+        Transicion t47 = new Transicion("1", "1", IZQUIERDA, q17);
+
+        q17.getTransiciones().add(t46);
+        q17.getTransiciones().add(t47);
+        q17.getTransiciones().add(t48);
+        
+        
+        
+        
 
         nodos.add(q0);
         nodos.add(q1);
@@ -214,6 +227,7 @@ public class Maquina implements Estandar {
         nodos.add(q15);
         nodos.add(q16);
         nodos.add(q17);
+        nodos.add(q18);
 
     }
 
@@ -225,8 +239,6 @@ public class Maquina implements Estandar {
 
     }
 
- 
-
     public ArrayList<Nodo> getNodos() {
         return nodos;
     }
@@ -234,26 +246,20 @@ public class Maquina implements Estandar {
     public ArrayList<String> getCinta() {
         return cinta;
     }
-    
-    
-    
 
     public ArrayList<String> toWork(Apuntador apuntar) {
 
         Nodo valor = nodos.get(0);
 
-
-      
         while (valor.aceptacion() != true) {
 
             valor = valor.evaluar(cinta, apuntar);
 
         }
-        
+
         System.out.println("Llegó al Estado q" + valor.getId());
         return cinta;
 
     }
 
 }
-
